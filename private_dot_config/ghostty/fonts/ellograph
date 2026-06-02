@@ -1,0 +1,8 @@
+font-family = Ellograph CF
+font-style = Thin
+font-style-italic = Thin Italic
+font-style-bold = Light
+font-style-bold-italic = Light Italic
+font-feature = +calt, +liga, +ss03, +ss04
+font-thicken = true
+adjust-cell-height = 4

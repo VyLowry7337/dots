@@ -1,0 +1,307 @@
+{
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+    "git_gutter": "hide",
+    "enable_status": true,
+    "enable_diff": true,
+  },
+  "languages": {
+    "Python": {
+      "show_completion_documentation": false,
+      "extend_comment_on_newline": false,
+      "language_servers": ["ty", "ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": {
+            "name": "ruff",
+          },
+        },
+        { "code_action": "source.organizeImports.ruff" },
+      ],
+    },
+  },
+  "lsp": {
+    "ty": {
+      "binary": {
+        "path": "/Users/dom/.local/bin/ty",
+        "arguments": ["server"],
+      },
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "lint": {
+            "enable": true,
+          },
+          "lineLength": 120,
+        },
+      },
+    },
+    "basedpyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace",
+        },
+        "python": {
+          "pythonPath": ".venv/bin/python",
+        },
+      },
+    },
+  },
+  "snippet_sort_order": "top",
+  "proxy": "",
+  "disable_ai": true,
+  "active_pane_modifiers": {
+    "border_size": 0.0,
+    "inactive_opacity": 0.8,
+  },
+  "focus_follows_mouse": {
+    "debounce_ms": 0,
+    "enabled": true,
+  },
+  "tabs": {
+    "show_diagnostics": "errors",
+    "close_position": "right",
+    "git_status": false,
+    "file_icons": true,
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_branch_name": true,
+  },
+  "debugger": {
+    "button": false,
+  },
+  "diagnostics_max_severity": "warning",
+  "prettier": {
+    "allowed": true,
+  },
+  "document_folding_ranges": "on",
+  "semantic_tokens": "combined",
+  "colorize_brackets": true,
+  "indent_guides": {
+    "coloring": "indent_aware",
+    "active_line_width": 2,
+    "line_width": 1,
+  },
+  "soft_wrap": "editor_width",
+  "vim": {
+    "cursor_shape": {
+      "insert": "bar",
+    },
+    "highlight_on_yank_duration": 500,
+    "toggle_relative_line_numbers": true,
+  },
+  "toolbar": {
+    "quick_actions": true,
+    "selections_menu": false,
+    "agent_review": false,
+  },
+  "scrollbar": {
+    "axes": {
+      "horizontal": false,
+    },
+    "diagnostics": "error",
+    "selected_symbol": false,
+    "selected_text": false,
+    "search_results": false,
+    "git_diff": false,
+    "cursors": false,
+    "show": "system",
+  },
+  "inline_code_actions": false,
+  "gutter": {
+    "min_line_number_digits": 3,
+  },
+  "relative_line_numbers": "enabled",
+  "which_key": {
+    "delay_ms": 500,
+    "enabled": true,
+  },
+  "show_wrap_guides": false,
+  "selection_highlight": false,
+  "current_line_highlight": "none",
+  "text_rendering_mode": "platform_default",
+  "ui_font_weight": 300.0,
+  "ui_font_family": "Space Grotesk",
+  "buffer_line_height": "comfortable",
+  "buffer_font_weight": 300.0,
+  "buffer_font_size": 22.0,
+  "buffer_font_family": "IoskeleyMono Nerd Font",
+  // +zero, +cv07, +ss03, +cv01, +cv02, +cv10, +cv06, +ss01, +cv11, +cv13
+  "buffer_font_features": {
+    "zero": true,
+    "cv07": true,
+    "ss03": true,
+    "cv01": true,
+    "cv02": true,
+    "cv10": true,
+    "cv06": true,
+    "ss01": true,
+    "cv11": true,
+    "cv13": true,
+  },
+  "agent": {
+    "button": false,
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "collaboration_panel": {
+    "button": false,
+  },
+  "git_panel": {
+    "button": false,
+  },
+  "outline_panel": {
+    "dock": "left",
+    "git_status": false,
+    "button": true,
+  },
+  "project_panel": {
+    "auto_open": {
+      "on_drop": false,
+      "on_paste": false,
+      "on_create": false,
+    },
+    "hide_root": false,
+    "indent_guides": {
+      "show": "never",
+    },
+    "sticky_scroll": false,
+    "scrollbar": {
+      "horizontal_scroll": false,
+    },
+    "auto_fold_dirs": false,
+    "default_width": 275.0,
+    "button": false,
+    "git_status": false,
+  },
+  "search": {
+    "button": false,
+  },
+  "diagnostics": {
+    "inline": {
+      "padding": 4,
+      "enabled": false,
+    },
+    "button": true,
+  },
+  "terminal": {
+    "font_size": 14.0,
+    "font_family": "Lilex Nerd Font",
+    "font_weight": 400.0,
+    "button": false,
+  },
+  "status_bar": {
+    "active_language_button": true,
+    "show_active_file": false,
+    "cursor_position_button": true,
+  },
+  "zoomed_padding": true,
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
+    "show_nav_history_buttons": false,
+    "show": true,
+    "show_tab_bar_buttons": true,
+  },
+  "mouse_wheel_zoom": true,
+  "ui_font_size": 20.0,
+  "cli_default_open_behavior": "existing_window",
+  "show_completions_on_input": true,
+  "completions": {
+    "words_min_length": 1,
+  },
+  "icon_theme": "Warm Charmed Icons",
+  "theme": "Catppuccin Mocha",
+  "theme_overrides": {
+    "Catppuccin Mocha": {
+      "border.variant": "#1E1E2E",
+      "border": "#1E1E2E",
+      "title_bar.background": "#1E1E2E",
+      "tab.inactive_background": "#1E1E2E",
+      "tab_bar.background": "#1E1E2E",
+      "tab.active_background": "#313244",
+      "status_bar.background": "#1E1E2E",
+      "vim.visual_line.background": "#74C7EC",
+      "vim.visual.background": "#94E2D5",
+      "vim.visual_block.background": "#89B4FA",
+      "vim.normal.background": "#89B4FA",
+      "vim.insert.background": "#CBA6F7",
+      "vim.replace.background": "#FAB387",
+      "panel.background": "#1E1E2E",
+      "editor.document_highlight.read_background": "#00000000",
+      // "panel.focused_border": "#1E1E2E",
+      "players": [
+        {
+          "cursor": "#a6da95",
+        },
+      ],
+      "syntax": {
+        "comment": {
+          "font_style": "italic",
+        },
+        "comment.doc": {
+          "font_style": "italic",
+        },
+        "boolean": {
+          "font_style": "italic",
+        },
+        "type": {
+          "font_style": "italic",
+        },
+        "type.builtin": {
+          "font_style": "italic",
+        },
+        "keyword": {
+          "font_style": "italic",
+        },
+        "keyword.repeat": {
+          "font_style": "italic",
+        },
+        "keyword.import": {
+          "font_style": "italic",
+        },
+        "keyword.return": {
+          "font_style": "italic",
+        },
+        "keyword.storage": {
+          "font_style": "italic",
+        },
+        "keyword.function": {
+          "font_style": "italic",
+        },
+        "keyword.operator": {
+          "font_style": "italic",
+        },
+        "keyword.directive": {
+          "font_style": "italic",
+        },
+        "keyword.exception": {
+          "font_style": "italic",
+        },
+        "keyword.conditional": {
+          "font_style": "italic",
+        },
+        "keyword.directive.define": {
+          "font_style": "italic",
+        },
+        "keyword.conditional.ternary": {
+          "font_style": "italic",
+        },
+        "variable": {
+          "font_style": "italic",
+        },
+        "variable.parameter": {
+          "font_style": "italic",
+        },
+        "function": {
+          "font_style": "italic",
+        },
+      },
+    },
+  },
+  "vim_mode": true,
+}

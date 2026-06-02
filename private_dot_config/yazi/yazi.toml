@@ -1,0 +1,35 @@
+[mgr]
+ratio = [2, 5, 3]
+show_hidden = true
+sort_by = "alphabetical"
+sort_sensitive = false
+sort_dir_first = true
+linemode = "permissions"
+show_symlink = true
+scrolloff = 20
+
+[preview]
+wrap = "yes"
+tab_size = 4
+image_filter = "Gaussian"
+
+[input]
+cursor_blink = true
+
+[confirm]
+cursor_blink = true
+
+[pick]
+cursor_blink = true
+
+[[plugin.prepend_fetchers]]
+id = "git"
+url = "*"
+run = "git"
+group = "git"
+
+[[plugin.prepend_fetchers]]
+id = "git"
+url = "*/"
+run = "git"
+group = "git"

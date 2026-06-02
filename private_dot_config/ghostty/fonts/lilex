@@ -1,0 +1,8 @@
+font-family = Lilex
+font-style = Regular
+font-style-italic = Italic
+font-style-bold = Medium
+font-style-bold-italic = Medium Italic
+font-feature = +zero, +cv07, +ss03, +cv01, +cv02, +cv10, +cv06, +ss01, +cv11, +cv13
+font-thicken = true
+font-thicken-strength = 100

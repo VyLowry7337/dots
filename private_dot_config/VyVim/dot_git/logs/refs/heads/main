@@ -1,0 +1,10 @@
+0000000000000000000000000000000000000000 624f244f023e60d42b5870b959f560b36e564aad dom <dom.ejr@icloud.com> 1773228225 +1300	commit (initial): NvChad Config
+624f244f023e60d42b5870b959f560b36e564aad 5c2211ca17858a3219c602b4323e3b4d7b97b946 dom <dom.ejr@icloud.com> 1773304170 +1300	commit: First push for Linux
+5c2211ca17858a3219c602b4323e3b4d7b97b946 084f09d2fd6f96e0825b5f0b524f9159515d7d08 dom <dom.ejr@icloud.com> 1773487895 +1300	commit: refactor(Blink-cmp): Fixed fuzzy implementation
+084f09d2fd6f96e0825b5f0b524f9159515d7d08 4be181afde7917f83fb1bd1f83a92bdd9d2f4cec dom <dom.ejr@icloud.com> 1773671277 +1300	commit: Feat: Implemented Opencode, TODO and a few more UI related plugins.
+4be181afde7917f83fb1bd1f83a92bdd9d2f4cec 21d59719dd61e6c6e5245b5d1ba23a774c686fb3 dom <dom.ejr@icloud.com> 1773997802 +1300	commit: refactor(Treesitter, LSP): Cleaning up Plugins/
+21d59719dd61e6c6e5245b5d1ba23a774c686fb3 ec908b9a21c3c97ccd9572794c32800daf74f0b9 dom <dom.ejr@icloud.com> 1774615832 +1300	commit: feat(UI + HiOverrides): Highlight overrides
+ec908b9a21c3c97ccd9572794c32800daf74f0b9 5c67da68abf78e145efce90c3f70534cc04e6871 VyLowry7337 <dom.ejr@icloud.com> 1777470545 +1200	commit: Updating for use on Linux Machine
+5c67da68abf78e145efce90c3f70534cc04e6871 04ad053a82216740fba46c98d108ec90042e9e4d VyLowry7337 <dom.ejr@icloud.com> 1778667089 +1200	commit: refactor: minor improvements to mappings, noice and snacks
+04ad053a82216740fba46c98d108ec90042e9e4d 536677b8f6a7c6872354ce12a480cbe1ca2d7f22 VyLowry7337 <dom.ejr@icloud.com> 1779853387 +1200	commit: feat(Update):
+536677b8f6a7c6872354ce12a480cbe1ca2d7f22 db4a59408d05cb8faf911fc008a4e7200a21e1ec VyLowry7337 <dom.ejr@icloud.com> 1780400899 +1200	commit: feat(Update for Linux):

@@ -1,0 +1,73 @@
+## enable or disable automatic sync
+auto_sync = true
+
+## enable or disable automatic update checks
+update_check = true
+
+## address of the sync server
+sync_address = "https://api.atuin.sh"
+
+## how often to sync history. note that this is only triggered when a command
+## is ran, so sync intervals may well be longer
+## set it to 0 to sync after every command
+sync_frequency = "30m"
+
+## which search mode to use
+## possible values: prefix, fulltext, fuzzy, skim
+search_mode = "fuzzy"
+
+## which filter mode to use
+## possible values: global, host, session, directory
+filter_mode = "global"
+
+## which style to use
+## possible values: auto, full, compact
+style = "auto"
+
+## the maximum number of lines the interface should take up
+## set it to 0 to always go full screen
+inline_height = 0
+
+## Invert the UI - put the search bar at the top , Default to `false`
+invert = false
+
+## enable or disable showing a preview of the selected command
+show_preview = true
+
+## what to do when the escape key is pressed when searching
+exit_mode = "return-original"
+
+## possible values: emacs, subl
+word_jump_mode = "emacs"
+
+## characters that count as a part of a word
+word_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+## number of context lines to show when scrolling by pages
+scroll_context_lines = 1
+
+## use ctrl instead of alt as the shortcut modifier key for numerical UI shortcuts
+ctrl_n_shortcuts = true
+
+## Configure the maximum height of the preview to show.
+max_preview_height = 4
+
+## Configure whether or not to show the help row, which includes the current Atuin
+## version (and whether an update is available), a keymap hint, and the total
+## amount of commands in your history.
+show_help = true
+
+## This matches history against a set of default regex, and will not save it if we get a match.
+secrets_filter = true
+
+## Defaults to true. If enabled, upon hitting enter Atuin will immediately execute the command. Press tab to return to the shell and edit.
+enter_accept = true
+
+keymap_mode = "vim-normal"
+keymap_cursor = { emacs = "blink-block", vim_insert = "blink-bar", vim_normal = "blink-block" }
+
+[ai]
+enabled = false
+
+[theme]
+name = "catppuccin-macchiato-red"

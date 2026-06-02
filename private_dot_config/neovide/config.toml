@@ -1,0 +1,30 @@
+frame = "buttonless"
+title-hidden = true
+vsync = false
+
+[font]
+size = 22.5
+hinting = "none"
+edging = "subpixelantialias"
+
+[font.features]
+"VictorMono Nerd Font" = ["+ss01", "+ss02", "+ss07", "+ss06"]
+
+[[font.normal]]
+family = "VictorMono Nerd Font"
+style = "Regular"
+
+[[font.bold]]
+family = "VictorMono Nerd Font"
+style = "Medium"
+
+[[font.italic]]
+family = "VictorMono Nerd Font"
+style = "Italic"
+
+[[font.bold_italic]]
+family = "VictorMono Nerd Font"
+style = "Medium Italic"
+
+[box-drawing]
+mode = "native"

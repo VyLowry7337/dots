@@ -1,0 +1,11 @@
+font-family = TX-02
+font-family-italic = MD IO
+font-family-bold = TX-02
+font-family-bold-italic = MD IO
+font-style = Thin
+font-style-italic = Thin Italic
+font-style-bold = ExtraLight
+font-style-bold-italic = Light Italic
+font-feature = +ss01, +ss04
+font-thicken = true
+font-thicken-strength = 255

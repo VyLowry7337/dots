@@ -1,0 +1,20 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dcolor\x3dbg\x2b\x3a\x23313244\x2cbg\x3a\x231E1E2E\x2cspinner\x3a\x23F5E0DC\x2chl\x3a\x23F38BA8\x20\x2d\x2dcolor\x3dfg\x3a\x23CDD6F4\x2cheader\x3a\x23F38BA8\x2cinfo\x3a\x23CBA6F7\x2cpointer\x3a\x23F5E0DC\x20\x2d\x2dcolor\x3dmarker\x3a\x23B4BEFE\x2cfg\x2b\x3a\x23CDD6F4\x2cprompt\x3a\x23CBA6F7\x2chl\x2b\x3a\x23F38BA8\x20\x2d\x2dcolor\x3dselected\x2dbg\x3a\x2345475A\x20\x2d\x2dcolor\x3dborder\x3a\x236C7086\x2clabel\x3a\x23CDD6F4
+SETUVAR --export HOMEBREW_NO_ENV_HINTS:1
+SETUVAR --export HOMEBREW_NO_REQUIRE_TAP_TRUST:1
+SETUVAR --export MANPAGER:moor
+SETUVAR --export MOOR:\x2d\x2dno\x2dstatusbar\x20\x2d\x2dno\x2dlinenumbers\x20\x2d\x2dwrap
+SETUVAR --export PAGER:moor
+SETUVAR --export TMUX_DIR:/Users/dom/\x2econfig/tmux
+SETUVAR --export XDG_CONFIG_HOME:/Users/dom/\x2econfig
+SETUVAR __fish_initialized:4300
+SETUVAR __fish_webconfig_theme_notification:set\x2dtheme\x2dv1\x2d\x231
+SETUVAR _fisher_franciscolourenco_2F_done_files:\x7e/\x2econfig/fish/conf\x2ed/done\x2efish
+SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:\x7e/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/autopair\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_mattmc3_2F_magic_2D_enter_2E_fish_files:\x7e/\x2econfig/fish/conf\x2ed/magic\x2denter\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1emattmc3/magic\x2denter\x2efish\x1ejorgebucaran/autopair\x2efish\x1efranciscolourenco/done
+SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR fish_greeting:
+SETUVAR fish_user_paths:/Users/dom/\x2elocal/bin\x1e/Users/dom/\x2ecargo/bin\x1e/Users/dom/\x2eclaurst/bin\x1e/Applications\x1e/opt/homebrew/bin\x1e/Users/dom/go/bin

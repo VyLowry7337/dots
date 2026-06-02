@@ -1,0 +1,8 @@
+font-family = MD IO
+font-style = Regular
+font-style-italic = Italic
+font-style-bold = Medium
+font-style-bold-italic = Medium Italic
+font-feature = +zero
+adjust-cell-height = 1
+adjust-cursor-height = 1

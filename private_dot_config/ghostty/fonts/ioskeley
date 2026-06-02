@@ -1,0 +1,12 @@
+font-family = Ioskeley Mono Term
+font-family-bold = Ioskeley Mono Term
+font-family-italic = Lilex
+font-family-bold-italic = Lilex
+font-style = Regular
+font-style-italic = Italic
+font-style-bold = Medium
+font-style-bold-italic = Medium Italic
+font-feature = +zero, +calt
+font-thicken = true
+adjust-cell-height = 1
+adjust-cursor-height = 1

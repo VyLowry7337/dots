@@ -1,0 +1,29 @@
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "a837101"
+hash = "635b0feb9215772d22020eb0abf0bb34"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "598cdb6"
+hash = "88e56a64b7ce7c4314427452343fef17"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:no-status"
+rev = "598cdb6"
+hash = "3e023d31f29201efdac2a6ae35fedb78"
+
+[[plugin.deps]]
+use = "mikavilpas/easyjump.yazi:easyjump"
+rev = "aa23b7d"
+hash = "b976709df0f6d3341736f053e87b2b8"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "0f9204b"
+hash = "7dfe41c9c3d9be76da8a844263d0bbed"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-macchiato"
+rev = "0f9204b"
+hash = "67f2240fd9c98f21714527a24cd672f8"
