@@ -57,16 +57,6 @@ return {
   },
 
   {
-    'gbprod/cutlass.nvim',
-    opts = { exclude = { 'ns', 'nS' } },
-  },
-
-  {
-    'gbprod/yanky.nvim',
-    opts = {},
-  },
-
-  {
     'brianhuster/live-preview.nvim',
     lazy = true,
     enabled = true,
@@ -97,12 +87,6 @@ return {
         },
       })
     end,
-  },
-
-  {
-    'folke/ts-comments.nvim',
-    event = 'VeryLazy',
-    opts = {},
   },
 
   {
@@ -194,7 +178,16 @@ return {
         biscuit = { enabled = true, visible_mode = 'hover' },
       },
 
-      inlay_hint = { enabled = false },
+      inlay_hint = {
+        enabled = false,
+        param_icon = true,
+        type_icon = true,
+        type_text = false,
+        fn_icon = true,
+        fn_return_text = false,
+        generic_text = false,
+        object_threshold = 3,
+      },
 
       signature_help = { auto = false },
       hover = {},

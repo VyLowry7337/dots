@@ -36,6 +36,8 @@ local active_servers = {
   'jsonls',
   'tombi',
   'yamlls',
+  'marksman',
+  'ts_query_ls',
 }
 
 vim.lsp.config('lua_ls', {
@@ -87,8 +89,10 @@ vim.lsp.config('ty', {
 
 vim.lsp.config('jsonls', {
   settings = {
-    schemas = require('schemastore').json.schemas(),
-    validate = { enable = true },
+    json = {
+      schemas = require('schemastore').json.schemas(),
+      validate = { enable = true },
+    },
   },
 })
 
@@ -110,24 +114,16 @@ vim.lsp.config('html', {
     'htmldjango',
     'templ',
   },
-
-  init_options = {
-    provideFormatter = true,
+  hover = {
+    documentation = true,
+    references = true,
   },
+})
 
-  settings = {
-    html = {
-      format = {
-        wrapLineLength = 120,
-        unformatted = 'code,pre,em,strong,span',
-      },
-
-      hover = {
-        documentation = true,
-        references = true,
-      },
-    },
-  },
+vim.lsp.config('marksman', {
+  cmd = { 'marksman', 'server' },
+  filetypes = { 'markdown', 'md', 'markdown.mdx' },
+  root_markers = { '.marksman.toml', '.git' },
 })
 
 for _, server in ipairs(active_servers) do

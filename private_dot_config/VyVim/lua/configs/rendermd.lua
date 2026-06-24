@@ -1,43 +1,35 @@
-require("render-markdown").setup({
-
-    completions = { blink = { enabled = true } },
-    heading = {
-        render_modes = true,
-        icons = { "󰬺  ", "󰬻  ", "󰬼  ", "󰬽  ", "󰬾  ", "󰬿  " },
-        position = "inline",
-        backgrounds = {},
-    },
-    checkbox = {
-        unchecked = { icon = "󰄱 " },
-        checked = { icon = "󰄵 " },
-        custom = { todo = { rendered = " " } },
-    },
-    quote = { repeat_linebreak = true },
-    pipe_table = {
-        preset = "round",
-        alignment_indicator = "",
-    },
-    link = {
-        wiki = { icon = "󰇈 " },
-        custom = {
-            python = { pattern = "%.py$", icon = "󰌠 " },
-            markdown = { pattern = "%.md$", icon = "󰍔 " },
-        },
-    },
-    sign = { enabled = false },
-    latex = { enabled = false },
-
-    code = {
-        sign = false,
-        border = "thin",
-        position = "right",
-        width = "block",
-        above = "▁",
-        below = "▔",
-        language_left = "█",
-        language_right = "█",
-        language_border = "▁",
-        left_pad = 1,
-        right_pad = 1,
-    },
+require('render-markdown').setup({
+  file_types = { 'markdown', 'md', 'codecompanion' },
+  render_modes = { 'n', 'no', 'c', 't', 'i', 'ic' },
+  code = {
+    sign = false,
+    border = 'thin',
+    position = 'right',
+    width = 'block',
+    above = '▁',
+    below = '▔',
+    language_left = '█',
+    language_right = '█',
+    language_border = '▁',
+    left_pad = 1,
+    right_pad = 1,
+  },
+  heading = {
+    sign = false,
+    width = 'block',
+    -- backgrounds = {
+    --   '',
+    --   '',
+    --   '',
+    --   '',
+    --   '',
+    --   '',
+    -- },
+    left_pad = 1,
+    right_pad = 0,
+    position = 'right',
+    icons = function(ctx)
+      return (''):rep(ctx.level) .. ''
+    end,
+  },
 })

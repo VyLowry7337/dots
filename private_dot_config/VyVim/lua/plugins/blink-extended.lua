@@ -1,5 +1,4 @@
 local cmp_ui = require('ui.cmp')
-
 return {
   {
     {
@@ -38,36 +37,47 @@ return {
           },
           ['<S-TAB'] = { 'snippet_backward', 'fallback' },
           ['`'] = { 'show', 'show_documentation', 'hide_documentation' },
-          ['<C-e>'] = { 'hide', 'fallback' },
+          ['<C-x>'] = { 'hide', 'fallback' },
           ['<C-n>'] = { 'select_next', 'fallback' },
           ['<C-p>'] = { 'select_prev', 'fallback' },
           ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
           ['<C-f>'] = { 'scroll_documentation_up', 'fallback' },
+          ['<C-e'] = false,
           ['<CR>'] = false,
           ['<C-k>'] = false,
         },
         snippets = { preset = 'luasnip' },
         sources = {
-          default = { 'lazydev', 'snippets', 'lsp', 'buffer', 'path' },
+          default = { 'lazydev', 'snippets', 'lsp', 'buffer', 'path', 'dbab' },
           providers = {
             lazydev = {
               name = 'LazyDev',
               module = 'lazydev.integrations.blink',
               score_offset = 100,
             },
+            dbab = {
+              name = 'dbab',
+              module = 'blink_dbab',
+            },
           },
         },
+
         signature = {
           enabled = false,
           window = { show_documentation = true, treesitter_highlighting = true, border = 'single' },
           trigger = { enabled = false },
         },
         completion = {
-          ghost_text = { enabled = false },
+          ghost_text = { enabled = true },
           documentation = vim.tbl_deep_extend('force', {
             auto_show = true,
             auto_show_delay_ms = 200,
           }, cmp_ui.documentation),
+
+          list = {
+            selection = { preselect = false, auto_insert = false },
+          },
+
           menu = vim.tbl_deep_extend('force', {
             winhighlight = 'Normal:BlinkCmpMenu,CursorLine:BlinkCmpMenuSelection,Search:None,FloatBorder:BlinkCmpMenuBorder',
             draw = vim.tbl_deep_extend('force', {
@@ -125,20 +135,26 @@ return {
   {
     'saghen/blink.pairs',
     version = '*',
-    dependencies = 'saghen/blink.download',
+    build = function()
+      require('blink.pairs').build():pwait(60000)
+    end,
+    dependencies = 'saghen/blink.lib',
     --- @module 'blink.pairs'
     opts = {
       highlights = {
         enabled = true,
+        cmdline = true,
         groups = {
           'BlinkPairsRed',
-          'BlinkPairsOrange',
+          'BlinkPairsBlue',
           'BlinkPairsYellow',
           'BlinkPairsGreen',
+          'BlinkPairsOrange',
+          'BlinkPairsPurple',
           'BlinkPairsCyan',
-          'BlinkPairsBlue',
-          'BlinkPairsViolet',
         },
+        unmatched_group = 'BlinkPairsUnmatched',
+
         matchparen = {
           enabled = false,
           cmdline = false,

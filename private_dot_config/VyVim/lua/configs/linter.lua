@@ -9,6 +9,5 @@ M.linters_by_ft = {
   json = { 'jsonlint' },
   yaml = { 'yamllint' },
   toml = { 'tombi' },
-  markdown = { 'rumdl' },
   env = { 'dotenv-linter' },
 }

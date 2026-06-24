@@ -1,5 +1,28 @@
 local colors = require('theme.palettes.' .. require('vyrc').theme.palette)
 
+local bg0 = colors.code_block -- Surface0
+local bg1 = colors.obsidian -- Surface1
+
+-- Background Helper Fnc
+local function hex_to_rgb(hex)
+  return tonumber(hex:sub(2, 3), 16), tonumber(hex:sub(4, 5), 16), tonumber(hex:sub(6, 7), 16)
+end
+
+local function rgb_to_hex(r, g, b)
+  return string.format('#%02x%02x%02x', r, g, b)
+end
+
+local function blend(fg, bg, alpha)
+  local r1, g1, b1 = hex_to_rgb(fg)
+  local r2, g2, b2 = hex_to_rgb(bg)
+
+  local r = math.floor(r1 * alpha + r2 * (1 - alpha))
+  local g = math.floor(g1 * alpha + g2 * (1 - alpha))
+  local b = math.floor(b1 * alpha + b2 * (1 - alpha))
+
+  return rgb_to_hex(r, g, b)
+end
+
 local style = 'atom_colored' -- default / atom_colored
 
 local kind_links = {
@@ -58,62 +81,106 @@ local kind_links = {
   BlinkCmpKindTextColor = { link = 'Special' },
 }
 
+local kind_bg = {
+  blue = blend(colors.navy, colors.bg, 0.25),
+  mauve = blend(colors.mauve, colors.bg, 0.25),
+  red = blend(colors.red, colors.bg, 0.25),
+  green = blend(colors.green, colors.bg, 0.25),
+  yellow = blend(colors.yellow, colors.bg, 0.25),
+  peach = blend(colors.peach, colors.bg, 0.25),
+  sapphire = blend(colors.sapphire, colors.bg, 0.25),
+  lavender = blend(colors.lavender, colors.bg, 0.25),
+  neutral = blend(colors.white, colors.bg, 0.25),
+}
+
 local atom_colored_kinds = {
-  BlinkCmpKindFunction = { fg = '#61afef', bg = '#324c65' },
-  BlinkCmpKindMethod = { fg = '#61afef', bg = '#324c65' },
-  BlinkCmpKindConstructor = { fg = '#61afef', bg = '#324c65' },
-  BlinkCmpKindVariable = { fg = '#c678dd', bg = '#503b5f' },
-  BlinkCmpKindField = { fg = '#e06c75', bg = '#583840' },
-  BlinkCmpKindProperty = { fg = '#e06c75', bg = '#583840' },
-  BlinkCmpKindIdentifier = { fg = '#e06c75', bg = '#583840' },
-  BlinkCmpKindSnippet = { fg = '#e06c75', bg = '#583840' },
-  BlinkCmpKindText = { fg = '#98c379', bg = '#425241' },
-  BlinkCmpKindClass = { fg = '#519ABA', bg = '#2d4655' },
-  BlinkCmpKindInterface = { fg = '#98c379', bg = '#425241' },
-  BlinkCmpKindModule = { fg = '#e5c07b', bg = '#595142' },
-  BlinkCmpKindKeyword = { fg = '#c8ccd4', bg = '#51555d' },
-  BlinkCmpKindConstant = { fg = '#d19a66', bg = '#53463c' },
-  BlinkCmpKindEnum = { fg = '#61afef', bg = '#324c65' },
-  BlinkCmpKindEnumMember = { fg = '#de98fd', bg = '#574569' },
-  BlinkCmpKindStruct = { fg = '#c678dd', bg = '#503b5f' },
-  BlinkCmpKindUnit = { fg = '#c678dd', bg = '#503b5f' },
-  BlinkCmpKindValue = { fg = '#a3b8ef', bg = '#454f65' },
-  BlinkCmpKindEvent = { fg = '#e7c787', bg = '#5a5345' },
-  BlinkCmpKindOperator = { fg = '#abb2bf', bg = '#484d56' },
-  BlinkCmpKindTypeParameter = { fg = '#e06c75', bg = '#583840' },
-  BlinkCmpKindFile = { fg = '#c8ccd4', bg = '#51555d' },
-  BlinkCmpKindFolder = { fg = '#c8ccd4', bg = '#51555d' },
-  BlinkCmpKindReference = { fg = '#abb2bf', bg = '#484d56' },
-  BlinkCmpKindColor = { fg = '#abb2bf', bg = '#484d56' },
+  -- Functions / methods → blue
+  BlinkCmpKindFunction = { fg = colors.navy, bg = kind_bg.blue },
+  BlinkCmpKindMethod = { fg = colors.navy, bg = kind_bg.blue },
+  BlinkCmpKindConstructor = { fg = colors.navy, bg = kind_bg.blue },
+
+  -- Variables / structs → mauve
+  BlinkCmpKindVariable = { fg = colors.yellow, bg = kind_bg.yellow },
+  BlinkCmpKindStruct = { fg = colors.yellow, bg = kind_bg.yellow },
+  BlinkCmpKindUnit = { fg = colors.yellow, bg = kind_bg.yellow },
+
+  -- Fields / properties → red
+  BlinkCmpKindField = { fg = colors.red, bg = kind_bg.red },
+  BlinkCmpKindProperty = { fg = colors.red, bg = kind_bg.red },
+  BlinkCmpKindIdentifier = { fg = colors.red, bg = kind_bg.red },
+  BlinkCmpKindSnippet = { fg = colors.red, bg = kind_bg.red },
+
+  -- Text / interface → green
+  BlinkCmpKindText = { fg = colors.green, bg = kind_bg.green },
+  BlinkCmpKindInterface = { fg = colors.green, bg = kind_bg.green },
+
+  -- Classes → sapphire
+  BlinkCmpKindClass = { fg = colors.sapphire, bg = kind_bg.sapphire },
+
+  -- Modules / constants
+  BlinkCmpKindModule = { fg = colors.yellow, bg = kind_bg.yellow },
+  BlinkCmpKindConstant = { fg = colors.peach, bg = kind_bg.peach },
+
+  -- Keywords (more neutral)
+  BlinkCmpKindKeyword = { fg = colors.white, bg = kind_bg.neutral },
+
+  -- Enums
+  BlinkCmpKindEnum = { fg = colors.navy, bg = kind_bg.blue },
+  BlinkCmpKindEnumMember = { fg = colors.lavender, bg = kind_bg.lavender },
+
+  -- Values / events
+  BlinkCmpKindValue = { fg = colors.lavender, bg = kind_bg.lavender },
+  BlinkCmpKindEvent = { fg = colors.yellow, bg = kind_bg.yellow },
+
+  -- Subtle / neutral kinds
+  BlinkCmpKindOperator = { fg = colors.pearl, bg = kind_bg.neutral },
+  BlinkCmpKindReference = { fg = colors.pearl, bg = kind_bg.neutral },
+  BlinkCmpKindColor = { fg = colors.pearl, bg = kind_bg.neutral },
+
+  BlinkCmpKindTypeParameter = { fg = colors.red, bg = kind_bg.red },
+
+  BlinkCmpKindFile = { fg = colors.white, bg = kind_bg.neutral },
+  BlinkCmpKindFolder = { fg = colors.white, bg = kind_bg.neutral },
 }
 
 local kind_text_hl = {
-  BlinkCmpKindTextFunction = { fg = '#61afef' },
-  BlinkCmpKindTextMethod = { fg = '#61afef' },
-  BlinkCmpKindTextConstructor = { fg = '#61afef' },
-  BlinkCmpKindTextVariable = { fg = '#c678dd' },
-  BlinkCmpKindTextField = { fg = '#e06c75' },
-  BlinkCmpKindTextProperty = { fg = '#e06c75' },
-  BlinkCmpKindTextIdentifier = { fg = '#e06c75' },
-  BlinkCmpKindTextSnippet = { fg = '#e06c75' },
-  BlinkCmpKindTextText = { fg = '#98c379' },
-  BlinkCmpKindTextClass = { fg = '#519ABA' },
-  BlinkCmpKindTextInterface = { fg = '#98c379' },
-  BlinkCmpKindTextModule = { fg = '#e5c07b' },
-  BlinkCmpKindTextKeyword = { fg = '#c8ccd4' },
-  BlinkCmpKindTextConstant = { fg = '#d19a66' },
-  BlinkCmpKindTextEnum = { fg = '#61afef' },
-  BlinkCmpKindTextEnumMember = { fg = '#de98fd' },
-  BlinkCmpKindTextStruct = { fg = '#c678dd' },
-  BlinkCmpKindTextUnit = { fg = '#c678dd' },
-  BlinkCmpKindTextValue = { fg = '#a3b8ef' },
-  BlinkCmpKindTextEvent = { fg = '#e7c787' },
-  BlinkCmpKindTextOperator = { fg = '#abb2bf' },
-  BlinkCmpKindTextTypeParameter = { fg = '#e06c75' },
-  BlinkCmpKindTextFile = { fg = '#c8ccd4' },
-  BlinkCmpKindTextFolder = { fg = '#c8ccd4' },
-  BlinkCmpKindTextReference = { fg = '#abb2bf' },
-  BlinkCmpKindTextColor = { fg = '#abb2bf' },
+  BlinkCmpKindTextFunction = { fg = colors.navy, italic = true },
+  BlinkCmpKindTextMethod = { fg = colors.navy, italic = true },
+  BlinkCmpKindTextConstructor = { fg = colors.navy, italic = true },
+
+  BlinkCmpKindTextVariable = { fg = colors.yellow, italic = true },
+  BlinkCmpKindTextStruct = { fg = colors.yellow, italic = true },
+  BlinkCmpKindTextUnit = { fg = colors.yellow, italic = true },
+
+  BlinkCmpKindTextField = { fg = colors.red, italic = true },
+  BlinkCmpKindTextProperty = { fg = colors.red, italic = true },
+  BlinkCmpKindTextIdentifier = { fg = colors.red, italic = true },
+  BlinkCmpKindTextSnippet = { fg = colors.red, italic = true },
+
+  BlinkCmpKindTextText = { fg = colors.green, italic = true },
+  BlinkCmpKindTextInterface = { fg = colors.green, italic = true },
+
+  BlinkCmpKindTextClass = { fg = colors.sapphire, italic = true },
+
+  BlinkCmpKindTextModule = { fg = colors.yellow, italic = true },
+  BlinkCmpKindTextConstant = { fg = colors.peach, italic = true },
+
+  BlinkCmpKindTextKeyword = { fg = colors.mauve, italic = true },
+
+  BlinkCmpKindTextEnum = { fg = colors.navy, italic = true },
+  BlinkCmpKindTextEnumMember = { fg = colors.lavender, italic = true },
+
+  BlinkCmpKindTextValue = { fg = colors.lavender, italic = true },
+  BlinkCmpKindTextEvent = { fg = colors.yellow, italic = true },
+
+  BlinkCmpKindTextOperator = { fg = colors.pearl, italic = true },
+  BlinkCmpKindTextReference = { fg = colors.pearl, italic = true },
+  BlinkCmpKindTextColor = { fg = colors.pearl, italic = true },
+
+  BlinkCmpKindTextTypeParameter = { fg = colors.red, italic = true },
+
+  BlinkCmpKindTextFile = { fg = colors.white, italic = true },
+  BlinkCmpKindTextFolder = { fg = colors.white, italic = true },
 }
 
 local is_atom = style == 'atom_colored'
@@ -139,30 +206,13 @@ M.draw = {
   columns = {
     { 'kind_icon' },
     { 'label', 'label_description', gap = 1 },
-    { 'kind' },
   },
   components = {
     kind_icon = {
       text = function(ctx)
-        if ctx.kind == 'Color' then
-          local ok, hl = pcall(function()
-            return require('color.blink').get_hl(ctx.item)
-          end)
-          if ok and hl then
-            return ' 󱓻 '
-          end
-        end
         return ' ' .. ctx.kind_icon .. ' '
       end,
       highlight = function(ctx)
-        if ctx.kind == 'Color' then
-          local ok, hl = pcall(function()
-            return require('color.blink').get_hl(ctx.item)
-          end)
-          if ok and hl then
-            return hl
-          end
-        end
         return 'BlinkCmpKind' .. ctx.kind
       end,
     },

@@ -1,37 +1,48 @@
 ---@module "conform"
 ---@type conform.setupOpts
 local options = {
-    formatters_by_ft = {
-        markdown = { "rumdl" },
-        bash = { 'beautysh' },
-        zsh = { "shfmt" },
-        json = { "jq" },
-        lua = { "stylua" },
-        css = { "prettier" },
-        -- html = { "prettier" },
-        yaml = { "yamlfmt" },
-        toml = { "tombi" },
-        python = {
-            "ruff_fix",
-            "ruff_format",
-            "ruff_organize_imports",
-        },
-        javascript = { "prettier" },
+  formatters_by_ft = {
+    markdown = { 'mdslw' },
+    bash = { 'beautysh' },
+    zsh = { 'shfmt' },
+    json = { 'jq' },
+    lua = { 'stylua' },
+    css = { 'prettierd' },
+    html = { 'prettierd' },
+    htmldjango = { 'prettierd' },
+    jinja = { 'prettierd' },
+    jinja2 = { 'prettierd' },
+    yaml = { 'prettierd' },
+    toml = { 'tombi' },
+    python = {
+      'ruff_fix',
+      'ruff_format',
+      'ruff_organize_imports',
     },
+    javascript = { 'prettierd' },
+    sql = { 'sleek' },
+  },
 
-    default_format_opts = {
-        lsp_format = "fallback",
-    },
+  default_format_opts = {
+    lsp_format = 'fallback',
+  },
 
-    format_on_save = {
-        timeout_ms = 1500,
-    },
+  format_on_save = {
+    timeout_ms = 5000,
+  },
 
-    formatters = {
-        prettier = {
-            prepend_args = { "--bracket-same-line", "true" },
-        },
+  formatters = {
+    mdslw = { prepend_args = { '--stdin-filepath', '$FILENAME' } },
+    prettierd = {
+      condition = function(self, ctx)
+        local jinja_fts = { htmldjango = true, jinja = true, jinja2 = true }
+        if jinja_fts[vim.bo[ctx.buf].filetype] then
+          return true
+        end
+        return true
+      end,
     },
+  },
 }
 
 return options

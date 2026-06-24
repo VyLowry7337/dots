@@ -12,6 +12,12 @@ map({ 'n', 'x' }, '<Up>', "v:count == 0 ? 'gk' : 'k'", { desc = 'Up', expr = tru
 map('n', '0', '^', { noremap = true })
 map('n', '^', '0', { noremap = true })
 
+map({ 'n', 'x' }, 'x', '"_x')
+map({ 'n', 'x' }, 'X', '"_X')
+
+-- Paste over Visual
+map('v', 'p', '"_dP', opts)
+
 -- Better Identing </>
 map('v', '<', '<gv', { desc = 'Indent left' })
 map('v', '>', '>gv', { desc = 'Indent right' })
@@ -22,7 +28,7 @@ map('n', '<leader><space>', '<cmd>Yazi<CR>', { desc = 'Yazi' })
 -- General Helpers
 map('n', '<leader>fn', '<cmd>enew<CR>', { desc = 'New File' })
 map('n', ';', ':', { desc = 'CMD enter command mode' }) -- ';' for cmdline
-map('n', '<C-q>', '<cmd>wqall<CR>', { desc = 'Save All & Exit' }) -- Save all and Exit
+map('n', '<C-q>', '<cmd>wqall!<CR>', { desc = 'Save All & Exit' }) -- Save all and Exit
 map('n', '<C-C>', 'ciw') -- Change Inner Word Shortcut
 map({ 'n' }, '<C-s>', '<cmd> w <cr>') -- Quicksave
 
@@ -45,29 +51,7 @@ end, { desc = 'Noice Last' })
 
 -- Neogen
 
--- Telescope (When not using Snacks)
--- map("n", "<leader>ft", "<cmd>Telescope<CR>", { desc = "TS Pickers" })
--- map("n", "<leader>fj", "<cmd>Telescope jumplist<CR>", { desc = "TS Jumplist" })
--- map("n", "<leader>fc", "<cmd>Telescope colorscheme<CR>", { desc = "TS Colorschemes" })
--- map("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "TS Keymaps" })
--- map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "TS Find Buffers" })
--- map("n", "<leader>fh", "<cmd>Telescope highlights<CR>", { desc = "TS Highlights" })
--- map("n", "<leader>fH", "<cmd>Telescope help_tags<CR>", { desc = "TS Help Page" })
--- map("n", "<leader>fm", "<cmd>Telescope marks<CR>", { desc = "TS Marks" })
--- map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "TS Recents" })
--- map("n", "<leader>fw", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "TS Search Buffer" })
--- map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "TS Git Commits" })
--- map("n", "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "TS Git Status" })
--- map("n", "<leader>fT", "<cmd>Telescope terms<CR>", { desc = "TS Terminals" })
--- map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "TS Find Files" })
--- map(
---     "n",
---     "<leader>fa",
---     "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
---     { desc = "TS Find All Files" }
--- )
-
--- Snacks Pickers (When not using Telescope)
+-- Snacks Pickers
 map({ 'n', 'v' }, '<C-n>', function()
   Snacks.explorer()
 end, { desc = 'Snacks Explorer' })
@@ -119,6 +103,9 @@ end, { desc = 'Keymap Search' })
 map('n', '<leader>fp', function()
   Snacks.picker.lazy()
 end, { desc = 'Plugin Specs Search' })
+map('n', '<leader>fs', function()
+  Snacks.picker.pickers()
+end, { desc = 'Picker List' })
 
 -- Snacks Toggles
 Snacks.toggle.option('wrap', { name = 'Wrap' }):map('<leader>ow')
@@ -127,6 +114,15 @@ Snacks.toggle.dim():map('<leader>oD')
 Snacks.toggle.indent():map('<leader>oi')
 Snacks.toggle.zoom():map('<leader>oZ')
 Snacks.toggle.zen():map('<leader>oz')
+
+-- Clear search, diff update and redraw
+-- taken from runtime/lua/_editor.lua
+map(
+  'n',
+  '<leader>ur',
+  '<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>',
+  { desc = 'Redraw / Clear hlsearch / Diff Update' }
+)
 
 -- Yanky
 map({ 'n', 'x' }, 'y', '<Plug>(YankyYank)')
@@ -179,22 +175,38 @@ map('i', '<C-l>', '<Right>', { desc = 'move right' })
 map('i', '<C-j>', '<Down>', { desc = 'move down' })
 map('i', '<C-k>', '<Up>', { desc = 'move up' })
 
+--PERF: REMEMBER TO CHANGE IF NOT USING TMUX
 -- Window Navigation (Ctrl + H,J,K,L)
-map('n', '<C-h>', '<C-w>h', { desc = 'switch window left' })
-map('n', '<C-l>', '<C-w>l', { desc = 'switch window right' })
-map('n', '<C-j>', '<C-w>j', { desc = 'switch window down' })
-map('n', '<C-k>', '<C-w>k', { desc = 'switch window up' })
+-- map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
+-- map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
+-- map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
+-- map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 
 -- Clear Search Highlights
 map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'general clear highlights' })
 
+-- Dashboard
 map('n', '<leader>H', '<cmd>GnDashboard<CR>', { desc = 'Dashboard' })
 
 -- Terminal
-map('n', '<C-\\', function()
-  require('snacks').terminal()
-end, { desc = 'Terminal' })
+map({ 'n', 't' }, '<C-/>', function()
+  Snacks.terminal.toggle(nil, { win = { position = 'bottom', height = 0.2 } })
+end, { desc = 'Toggle terminal' })
+map({ 'n', 't' }, '<leader>tf', function()
+  Snacks.terminal.toggle(nil, { win = { position = 'float' } })
+end, { desc = 'Toggle float terminal' })
+map({ 'n', 't' }, '<leader>tl', function()
+  Snacks.terminal.list()
+end, { desc = 'List terminals' })
 map('t', '<C-x>', '<C-\\><C-N>', { desc = 'Escape Terminal Mode' })
+
+-- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+map('n', 'n', "'Nn'[v:searchforward].'zv'", { expr = true, desc = 'Next Search Result' })
+map('x', 'n', "'Nn'[v:searchforward]", { expr = true, desc = 'Next Search Result' })
+map('o', 'n', "'Nn'[v:searchforward]", { expr = true, desc = 'Next Search Result' })
+map('n', 'N', "'nN'[v:searchforward].'zv'", { expr = true, desc = 'Prev Search Result' })
+map('x', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev Search Result' })
+map('o', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev Search Result' })
 
 -- Tiny Inline Diagnostics Toggles
 map('n', '<leader>de', '<cmd>TinyInlineDiag enable<cr>', { desc = 'Enable diagnostics' })
@@ -210,6 +222,7 @@ map('n', '<leader>dr', '<cmd>TinyInlineDiag reset<cr>', { desc = 'Reset diagnost
 
 del('n', '[d')
 del('n', ']d')
+map('n', 'q:', '', { desc = 'disable q:' })
 
 map('n', '[d', function()
   require('lemon').diagnostic_next()
@@ -230,7 +243,7 @@ end, { desc = 'hover doc', nowait = true })
 -- map('n', '<leader>lo', function()
 --   Snacks.picker.lsp_symbols()
 -- end, { desc = 'LSP symbols', nowait = true })
-map('n', '<leader>gd', function()
+map('n', 'gd', function()
   require('lemon').definition()
 end, { desc = 'LSP goto definition', nowait = true, noremap = true })
 map('n', '<leader>oh', function()

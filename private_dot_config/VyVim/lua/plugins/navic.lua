@@ -37,7 +37,7 @@ return {
     highlight = true,
     lsp = { auto_attach = false },
     separator = ' > ',
-    depth_limit = 4,
+    depth_limit = 2,
     depth_limit_indicator = '󰇘',
   },
 }

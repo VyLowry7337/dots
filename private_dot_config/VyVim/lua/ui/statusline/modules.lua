@@ -88,7 +88,7 @@ M.git_branch = function()
   local git_status = vim.b[utils.stbufnr()].gitsigns_status_dict
   local icon_hl = '%#GnGitIcon#'
   local text_hl = '%#GnGitText#'
-  local branch_icon = ''
+  local branch_icon = ' '
   local branch_name = git_status.head
 
   if branch_name == nil or branch_name == '' then
@@ -105,9 +105,9 @@ M.git_diff = function()
   end
 
   local git_icon = {
-    add = '',
-    change = '',
-    delete = '',
+    add = ' ',
+    change = ' ',
+    delete = ' ',
   }
 
   local parts = {}
@@ -125,7 +125,7 @@ M.git_diff = function()
     return ''
   end
 
-  return '%*[' .. table.concat(parts, ' ') .. '%*] %*'
+  return '%*' .. table.concat(parts, ' ') .. '%* %*'
 end
 
 M.diagnostics = function()
@@ -177,7 +177,7 @@ M.lsp = function()
       and client.name ~= 'biome'
     then
       -- local separator = "%#GnLspIcon#" .. "█"
-      local lsp_icon = '%#GnLspIcon#' .. ' 󰚗 '
+      local lsp_icon = '%#GnLspIcon#' .. ' 󰀘 '
       local lsp_text = '%#GnLspText#' .. (is_block and ' ' or '') .. client.name
 
       -- return (separator .. lsp_icon .. lsp_text .. " ") or " "
@@ -206,6 +206,7 @@ M.lsp_progress = function()
 
   -- https://github.com/xieyonn/spinner.nvim/blob/main/lua/spinner/pattern.lua
   local spinners = {
+
     '✶',
     '✸',
     '✹',

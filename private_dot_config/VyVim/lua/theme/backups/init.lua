@@ -31,7 +31,7 @@ M.base = {
   PmenuThumb = { bg = colors.charcoal },
 
   -- Search
-  Search = { bg = colors.magenta, fg = colors.black, bold = true, italic = true },
+  Search = { bg = colors.mauve, fg = colors.black, bold = true, italic = true },
   IncSearch = { bg = colors.green, fg = colors.black, bold = true, italic = true },
   Substitute = { bg = colors.blue, fg = colors.black, bold = true },
   MatchParen = { bg = colors.none, fg = colors.grape, bold = true, link = '' },
@@ -57,7 +57,7 @@ M.base = {
   SpellBad = { sp = colors.red, undercurl = true },
   SpellCap = { sp = colors.yellow, undercurl = true },
   SpellLocal = { sp = colors.blue, undercurl = true },
-  SpellRare = { sp = colors.magenta, undercurl = true },
+  SpellRare = { sp = colors.mauve, undercurl = true },
 
   -- Tabline (built-in)
   TabLine = { fg = colors.comment, bg = bg },
@@ -104,18 +104,18 @@ M.syntax = {
   Identifier = { fg = colors.red },
   Function = { fg = colors.blue },
 
-  Statement = { fg = colors.magenta },
+  Statement = { fg = colors.mauve },
   Conditional = { fg = colors.plum },
   Repeat = { fg = colors.tangerine },
   Label = { fg = colors.cyan },
   Operator = { fg = colors.cyan },
-  Keyword = { fg = colors.magenta, italic = true },
-  Exception = { fg = colors.magenta },
+  Keyword = { fg = colors.mauve, italic = true },
+  Exception = { fg = colors.mauve },
 
   PreProc = { fg = colors.yellow, italic = true },
-  Include = { fg = colors.magenta, italic = true },
-  Define = { fg = colors.magenta },
-  Macro = { fg = colors.magenta },
+  Include = { fg = colors.mauve, italic = true },
+  Define = { fg = colors.mauve },
+  Macro = { fg = colors.mauve },
   PreCondit = { fg = colors.yellow },
 
   Type = { fg = colors.yellow, italic = true },
@@ -133,7 +133,7 @@ M.syntax = {
   Underlined = { underline = true },
   Ignore = {},
   Error = { fg = colors.red },
-  Todo = { fg = colors.magenta, bold = true },
+  Todo = { fg = colors.mauve, bold = true },
 }
 
 M.treesitter = {
@@ -160,16 +160,16 @@ M.treesitter = {
   ['@attribute'] = { fg = colors.yellow },
   ['@error'] = { fg = colors.red },
 
-  ['@keyword'] = { fg = colors.magenta, italic = true },
-  ['@keyword.function'] = { fg = colors.magenta, italic = true },
-  ['@keyword.return'] = { fg = colors.magenta, italic = true },
-  ['@keyword.operator'] = { fg = colors.magenta, italic = true },
+  ['@keyword'] = { fg = colors.mauve, italic = true },
+  ['@keyword.function'] = { fg = colors.mauve, italic = true },
+  ['@keyword.return'] = { fg = colors.mauve, italic = true },
+  ['@keyword.operator'] = { fg = colors.mauve, italic = true },
   ['@keyword.import'] = { link = 'Include', italic = true },
-  ['@keyword.conditional'] = { fg = colors.magenta, italic = true },
-  ['@keyword.conditional.ternary'] = { fg = colors.magenta, italic = true },
+  ['@keyword.conditional'] = { fg = colors.mauve, italic = true },
+  ['@keyword.conditional.ternary'] = { fg = colors.mauve, italic = true },
   ['@keyword.repeat'] = { fg = colors.yellow, italic = true },
   ['@keyword.storage'] = { fg = colors.yellow, italic = true },
-  ['@keyword.directive.define'] = { fg = colors.magenta, italic = true },
+  ['@keyword.directive.define'] = { fg = colors.mauve, italic = true },
   ['@keyword.directive'] = { fg = colors.yellow, italic = true },
   ['@keyword.exception'] = { fg = colors.red, italic = true },
 
@@ -291,12 +291,12 @@ local stl_compact = {
   GnTelescopeMode = { fg = colors.yellow, bold = true },
   GnExplorerMode = { fg = colors.cyan, bold = true },
   GnLazyGitMode = { fg = colors.cyan, bold = true },
-  GnLazyNvimMode = { fg = colors.magenta, bold = true },
+  GnLazyNvimMode = { fg = colors.mauve, bold = true },
 
   GnFile = { fg = colors.white },
   GnFileIcon = { fg = colors.white },
 
-  GnGitIcon = { fg = colors.magenta },
+  GnGitIcon = { fg = colors.mauve },
   GnGitText = { fg = colors.gray },
   GnLsp = { fg = colors.navy },
   GnLspMsg = { fg = colors.green },
@@ -309,7 +309,7 @@ local stl_compact = {
   GnCursorText = { fg = colors.white },
   GnFolderIcon = { fg = colors.red },
   GnFolderText = { fg = colors.white },
-  GnQfIcon = { fg = colors.magenta },
+  GnQfIcon = { fg = colors.mauve },
   GnQfText = { fg = colors.gray },
 
   GnLspError = { fg = colors.red },
@@ -337,12 +337,12 @@ local stl_block = {
   GnTelescopeMode = { bg = colors.yellow, fg = colors.black, bold = true },
   GnExplorerMode = { bg = colors.cyan, fg = colors.black, bold = true },
   GnLazyGitMode = { bg = colors.cyan, fg = colors.black, bold = true },
-  GnLazyNvimMode = { bg = colors.magenta, fg = colors.black, bold = true },
+  GnLazyNvimMode = { bg = colors.mauve, fg = colors.black, bold = true },
 
   GnFileIcon = { bg = colors.stl_bg, fg = colors.white },
   GnFile = { bg = colors.stl_bg, fg = colors.white },
 
-  GnGitIcon = { fg = colors.magenta },
+  GnGitIcon = { fg = colors.mauve },
   GnGitText = { fg = colors.gray },
   GnLsp = { bg = colors.stl_bg, fg = colors.white },
   GnLspMsg = { bg = colors.green, fg = colors.black },
@@ -355,7 +355,7 @@ local stl_block = {
   GnCursorText = { bg = colors.stl_bg, fg = colors.white },
   GnFolderIcon = { bg = colors.red, fg = colors.black },
   GnFolderText = { bg = colors.stl_bg, fg = colors.white },
-  GnQfIcon = { bg = colors.magenta, fg = colors.black },
+  GnQfIcon = { bg = colors.mauve, fg = colors.black },
   GnQfText = { bg = colors.stl_bg, fg = colors.white },
 
   GnLspError = { fg = colors.red },
@@ -376,10 +376,10 @@ M.navic = {
   NavicIconsFunction = { fg = colors.blue, bg = colors.none },
   NavicIconsIdentifier = { fg = colors.red, bg = colors.none },
   NavicIconsField = { fg = colors.red, bg = colors.none },
-  NavicIconsVariable = { fg = colors.magenta, bg = colors.none },
+  NavicIconsVariable = { fg = colors.mauve, bg = colors.none },
   NavicIconsSnippet = { fg = colors.red, bg = colors.none },
   NavicIconsText = { fg = colors.green, bg = colors.none },
-  NavicIconsStructure = { fg = colors.magenta, bg = colors.none },
+  NavicIconsStructure = { fg = colors.mauve, bg = colors.none },
   NavicIconsType = { fg = colors.yellow, bg = colors.none },
   NavicIconsKeyword = { fg = colors.ivory, bg = colors.none },
   NavicIconsMethod = { fg = colors.blue, bg = colors.none },
@@ -388,14 +388,14 @@ M.navic = {
   NavicIconsModule = { fg = colors.yellow, bg = colors.none },
   NavicIconsProperty = { fg = colors.red, bg = colors.none },
   NavicIconsEnum = { fg = colors.blue, bg = colors.none },
-  NavicIconsUnit = { fg = colors.magenta, bg = colors.none },
+  NavicIconsUnit = { fg = colors.mauve, bg = colors.none },
   NavicIconsClass = { fg = colors.teal, bg = colors.none },
   NavicIconsFile = { fg = colors.ivory, bg = colors.none },
   NavicIconsInterface = { fg = colors.green, bg = colors.none },
   NavicIconsColor = { fg = colors.white, bg = colors.none },
   NavicIconsReference = { fg = colors.white, bg = colors.none },
   NavicIconsEnumMember = { fg = colors.fuchsia, bg = colors.none },
-  NavicIconsStruct = { fg = colors.magenta, bg = colors.none },
+  NavicIconsStruct = { fg = colors.mauve, bg = colors.none },
   NavicIconsValue = { fg = colors.cyan, bg = colors.none },
   NavicIconsEvent = { fg = colors.yellow, bg = colors.none },
   NavicIconsOperator = { fg = colors.white, bg = colors.none },
@@ -406,7 +406,7 @@ M.navic = {
   NavicIconsNumber = { fg = colors.peach, bg = colors.none },
   NavicIconsBoolean = { fg = colors.orange, bg = colors.none },
   NavicIconsArray = { fg = colors.blue, bg = colors.none },
-  NavicIconsObject = { fg = colors.magenta, bg = colors.none },
+  NavicIconsObject = { fg = colors.mauve, bg = colors.none },
   NavicIconsKey = { fg = colors.red, bg = colors.none },
   NavicIconsNull = { fg = colors.cyan, bg = colors.none },
   NavicText = { fg = colors.charcoal, bg = colors.none },
@@ -417,7 +417,7 @@ M.diagnostics = {
   DiagnosticError = { fg = colors.red },
   DiagnosticWarn = { fg = colors.yellow },
   DiagnosticInfo = { fg = colors.white },
-  DiagnosticHint = { fg = colors.magenta },
+  DiagnosticHint = { fg = colors.mauve },
   DiagnosticOk = { fg = colors.green },
 
   DiagnosticVirtualTextError = { fg = colors.peach, link = '' },
@@ -429,7 +429,7 @@ M.diagnostics = {
   -- DiagnosticUnderlineError = { sp = colors.red, undercurl = true, italic = true },
   -- DiagnosticUnderlineWarn = { sp = colors.yellow, undercurl = true, italic = true },
   -- DiagnosticUnderlineInfo = { sp = colors.white, undercurl = true, italic = true },
-  -- DiagnosticUnderlineHint = { sp = colors.magenta, undercurl = true, italic = true },
+  -- DiagnosticUnderlineHint = { sp = colors.mauve, undercurl = true, italic = true },
   -- DiagnosticUnderlineOk = { sp = colors.green, undercurl = true, italic = true },
 }
 
@@ -453,7 +453,7 @@ M.dashboard = {
   GnDashIconProject = { bg = colors.none, fg = colors.green },
   GnDashIconHistory = { bg = colors.none, fg = colors.blue },
   GnDashIconTools = { bg = colors.none, fg = colors.orange },
-  GnDashIconGit = { bg = colors.none, fg = colors.magenta },
+  GnDashIconGit = { bg = colors.none, fg = colors.mauve },
   GnDashIconSystem = { bg = colors.none, fg = colors.red },
   GnDashFocusLabel = { bg = bg, fg = colors.white, bold = true },
   GnDashFocusIcon = { bg = bg, fg = colors.white, bold = true },
@@ -483,11 +483,11 @@ M.plugins = {
   LuaGlobalVim = { fg = colors.mustard },
   ['@variable.member.lua'] = { fg = colors.red, link = '' },
 
-  ['@type.qualifier.tsx'] = { fg = colors.magenta, link = '' },
-  ['@type.qualifier.vue'] = { fg = colors.magenta, link = '' },
-  ['@type.qualifier.typescript'] = { fg = colors.magenta, link = '' },
-  ['@type.qualifier.javascript'] = { fg = colors.magenta, link = '' },
-  ['@type.qualifier.astro'] = { fg = colors.magenta, link = '' },
+  ['@type.qualifier.tsx'] = { fg = colors.mauve, link = '' },
+  ['@type.qualifier.vue'] = { fg = colors.mauve, link = '' },
+  ['@type.qualifier.typescript'] = { fg = colors.mauve, link = '' },
+  ['@type.qualifier.javascript'] = { fg = colors.mauve, link = '' },
+  ['@type.qualifier.astro'] = { fg = colors.mauve, link = '' },
 
   ['@parameter.tsx'] = { fg = colors.orange, link = '' },
   ['@parameter.vue'] = { fg = colors.orange, link = '' },
@@ -532,11 +532,11 @@ M.plugins = {
   ['@operator.html'] = { fg = colors.cyan },
   ['@operator.astro'] = { fg = colors.cyan },
 
-  ['@punctuation.special.tsx'] = { fg = colors.magenta },
-  ['@punctuation.special.vue'] = { fg = colors.magenta },
-  ['@punctuation.special.javascript'] = { fg = colors.magenta },
-  ['@punctuation.special.typescript'] = { fg = colors.magenta },
-  ['@punctuation.special.astro'] = { fg = colors.magenta },
+  ['@punctuation.special.tsx'] = { fg = colors.mauve },
+  ['@punctuation.special.vue'] = { fg = colors.mauve },
+  ['@punctuation.special.javascript'] = { fg = colors.mauve },
+  ['@punctuation.special.typescript'] = { fg = colors.mauve },
+  ['@punctuation.special.astro'] = { fg = colors.mauve },
 
   ['@tag.attribute.tsx'] = { fg = colors.orange },
   ['@tag.attribute.vue'] = { fg = colors.orange },
@@ -580,12 +580,12 @@ M.plugins = {
   ['@function.macro.rust'] = { fg = colors.blue },
   ['@namespace.rust'] = { fg = colors.orange },
   ['@variable.member.rust'] = { fg = colors.red, link = '' },
-  ['@module.rust'] = { fg = colors.magenta },
+  ['@module.rust'] = { fg = colors.mauve },
   ['@punctuation.bracket.rust'] = { fg = colors.cyan },
 
-  ['@include.java'] = { fg = colors.magenta },
-  ['@type.qualifier.java'] = { fg = colors.magenta },
-  ['@repeat.java'] = { fg = colors.magenta },
+  ['@include.java'] = { fg = colors.mauve },
+  ['@type.qualifier.java'] = { fg = colors.mauve },
+  ['@repeat.java'] = { fg = colors.mauve },
   ['@attribute.java'] = { fg = colors.orange },
   ['@variable.member.java'] = { fg = colors.red, link = '' },
 
@@ -620,7 +620,7 @@ M.plugins = {
   TextGreen = { fg = colors.green },
   TextRed = { fg = colors.red },
   TextBlue = { fg = colors.blue },
-  TextMagenta = { fg = colors.magenta },
+  TextMagenta = { fg = colors.mauve },
   TextYellow = { fg = colors.yellow },
   TextOrange = { fg = colors.orange },
   TextCyan = { fg = colors.cyan },
@@ -643,7 +643,7 @@ M.plugins = {
   IndentBlanklineIndent3 = { fg = colors.green, nocombine = true },
   IndentBlanklineIndent4 = { fg = colors.cyan, nocombine = true },
   IndentBlanklineIndent5 = { fg = colors.blue, nocombine = true },
-  IndentBlanklineIndent6 = { fg = colors.magenta, nocombine = true },
+  IndentBlanklineIndent6 = { fg = colors.mauve, nocombine = true },
 
   SkActive = { bg = colors.red, fg = colors.mode_fg },
 
@@ -663,7 +663,7 @@ M.plugins = {
   SnacksPickerTree = { fg = colors.border },
 
   VM_Extend = { bg = colors.blue, fg = colors.black },
-  VM_Cursor = { bg = colors.magenta, fg = colors.black },
+  VM_Cursor = { bg = colors.mauve, fg = colors.black },
 
   GitSignsChange = { fg = colors.orange },
   GitSignsAdd = { fg = colors.green },
@@ -702,7 +702,7 @@ M.plugins = {
   GitGraphTimestamp = { fg = colors.green },
   GitGraphAuthor = { fg = colors.blue },
   GitGraphBranchName = { fg = colors.red },
-  GitGraphBranchTag = { fg = colors.magenta },
+  GitGraphBranchTag = { fg = colors.mauve },
   GitGraphBranchMsg = { fg = colors.white },
   GitGraphBranch1 = { fg = colors.red },
   GitGraphBranch2 = { fg = colors.orange },
@@ -721,14 +721,14 @@ M.plugins = {
   HelpviewPalette2 = { bg = colors.orange, fg = colors.black },
   HelpviewPalette3 = { bg = colors.yellow, fg = colors.black },
   HelpviewPalette4 = { bg = colors.green, fg = colors.black },
-  HelpviewPalette6 = { bg = colors.magenta, fg = colors.black },
+  HelpviewPalette6 = { bg = colors.mauve, fg = colors.black },
   HelpviewPalette0Sign = { fg = colors.cyan },
   HelpviewPalette1Sign = { fg = colors.red },
   HelpviewPalette2Sign = { fg = colors.orange },
   HelpviewPalette3Sign = { fg = colors.yellow },
   HelpviewPalette4Sign = { fg = colors.green },
   HelpviewPalette5Sign = { fg = colors.blue },
-  HelpviewPalette6Sign = { fg = colors.magenta },
+  HelpviewPalette6Sign = { fg = colors.mauve },
   HelpviewPalette7Sign = { fg = colors.tangerine },
   HelpviewIcon0 = { fg = colors.cyan },
   HelpviewIcon1 = { fg = colors.red },
@@ -736,7 +736,7 @@ M.plugins = {
   HelpviewIcon3 = { fg = colors.yellow },
   HelpviewIcon4 = { fg = colors.green },
   HelpviewIcon5 = { fg = colors.blue },
-  HelpviewIcon6 = { fg = colors.magenta },
+  HelpviewIcon6 = { fg = colors.mauve },
 
   NotifyERRORBorder = { fg = colors.maroon },
   NotifyWARNBorder = { fg = colors.mustard },
@@ -747,12 +747,12 @@ M.plugins = {
   NotifyWARNIcon = { fg = colors.yellow },
   NotifyINFOIcon = { fg = colors.green },
   NotifyDEBUGIcon = { fg = colors.blue },
-  NotifyTRACEIcon = { fg = colors.magenta },
+  NotifyTRACEIcon = { fg = colors.mauve },
   NotifyERRORTitle = { fg = colors.red },
   NotifyWARNTitle = { fg = colors.yellow },
   NotifyINFOTitle = { fg = colors.green },
   NotifyDEBUGTitle = { fg = colors.blue },
-  NotifyTRACETitle = { fg = colors.magenta },
+  NotifyTRACETitle = { fg = colors.mauve },
 
   SnacksNotifierFooterInfo = { fg = colors.green },
   SnacksNotifierBorderInfo = { fg = colors.green },
@@ -795,7 +795,7 @@ M.markview = {
   MarkviewPalette3 = { fg = colors.yellow, bold = true },
   MarkviewPalette4 = { fg = colors.green, bold = true },
   MarkviewPalette5 = { fg = colors.blue, bold = true },
-  MarkviewPalette6 = { fg = colors.magenta, bold = true },
+  MarkviewPalette6 = { fg = colors.mauve, bold = true },
 
   MarkviewPalette0Fg = { fg = colors.cyan },
   MarkviewPalette1Fg = { fg = colors.red },
@@ -803,7 +803,7 @@ M.markview = {
   MarkviewPalette3Fg = { fg = colors.yellow },
   MarkviewPalette4Fg = { fg = colors.green },
   MarkviewPalette5Fg = { fg = colors.blue },
-  MarkviewPalette6Fg = { fg = colors.magenta },
+  MarkviewPalette6Fg = { fg = colors.mauve },
 
   MarkviewPalette0Sign = { fg = colors.cyan },
   MarkviewPalette1Sign = { fg = colors.red },
@@ -811,7 +811,7 @@ M.markview = {
   MarkviewPalette3Sign = { fg = colors.yellow },
   MarkviewPalette4Sign = { fg = colors.green },
   MarkviewPalette5Sign = { fg = colors.blue },
-  MarkviewPalette6Sign = { fg = colors.magenta },
+  MarkviewPalette6Sign = { fg = colors.mauve },
   MarkviewPalette7Sign = { fg = colors.tangerine },
 
   MarkviewIcon0 = { fg = colors.cyan },
@@ -820,7 +820,7 @@ M.markview = {
   MarkviewIcon3 = { fg = colors.yellow },
   MarkviewIcon4 = { fg = colors.green },
   MarkviewIcon5 = { fg = colors.blue },
-  MarkviewIcon6 = { fg = colors.magenta },
+  MarkviewIcon6 = { fg = colors.mauve },
 
   MarkviewCode = { bg = '#181825' },
   MarkviewCodeInfo = { fg = colors.charcoal, bg = '#181825' },
@@ -831,7 +831,7 @@ M.markview = {
   MarkviewBlockQuoteError = { fg = colors.red },
   MarkviewBlockQuoteNote = { fg = colors.blue },
   MarkviewBlockQuoteOk = { fg = colors.green },
-  MarkviewBlockQuoteSpecial = { fg = colors.magenta },
+  MarkviewBlockQuoteSpecial = { fg = colors.mauve },
   MarkviewBlockQuoteWarn = { fg = colors.orange },
 
   MarkviewCheckboxCancelled = { fg = colors.red },
@@ -849,7 +849,7 @@ M.markview = {
 
   MarkviewListItemMinus = { fg = colors.orange },
   MarkviewListItemPlus = { fg = colors.blue },
-  MarkviewListItemStar = { fg = colors.magenta },
+  MarkviewListItemStar = { fg = colors.mauve },
   MarkviewListItemDot = { fg = colors.orange },
 
   MarkviewHeading1 = { fg = colors.red, bold = true },
@@ -857,14 +857,14 @@ M.markview = {
   MarkviewHeading3 = { fg = colors.yellow, bold = true },
   MarkviewHeading4 = { fg = colors.green, bold = true },
   MarkviewHeading5 = { fg = colors.blue, bold = true },
-  MarkviewHeading6 = { fg = colors.magenta, bold = true },
+  MarkviewHeading6 = { fg = colors.mauve, bold = true },
 
   MarkviewHeading1Sign = { fg = colors.red },
   MarkviewHeading2Sign = { fg = colors.orange },
   MarkviewHeading3Sign = { fg = colors.yellow },
   MarkviewHeading4Sign = { fg = colors.green },
   MarkviewHeading5Sign = { fg = colors.blue },
-  MarkviewHeading6Sign = { fg = colors.magenta },
+  MarkviewHeading6Sign = { fg = colors.mauve },
 }
 
 -- Apply highlights
@@ -918,7 +918,7 @@ function M.set_terminal_colors()
   vim.g.terminal_color_2 = colors.green
   vim.g.terminal_color_3 = colors.yellow
   vim.g.terminal_color_4 = colors.blue
-  vim.g.terminal_color_5 = colors.magenta
+  vim.g.terminal_color_5 = colors.mauve
   vim.g.terminal_color_6 = colors.cyan
   vim.g.terminal_color_7 = colors.white
   vim.g.terminal_color_8 = colors.charcoal

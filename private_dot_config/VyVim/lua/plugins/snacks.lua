@@ -1,5 +1,15 @@
 local pad = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' }
 
+-- Terminal Mappings (C-hjkl)
+local function term_nav(dir)
+  ---@param self snacks.terminal
+  return function(self)
+    return self:is_floating() and '<c-' .. dir .. '>' or vim.schedule(function()
+      vim.cmd.wincmd(dir)
+    end)
+  end
+end
+
 local main_layout = {
   preset = function()
     return vim.o.columns >= 120 and 'telescope' or 'vertical'
@@ -199,22 +209,19 @@ local config = {
   },
   indent = {
     enabled = true,
+    filter = function(buf)
+      return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].filetype ~= 'markdown'
+    end,
+    only_scope = true,
     indent = {
-      -- hl = {
-      --   'IndentBlanklineIndent1',
-      --   'IndentBlanklineIndent2',
-      --   'IndentBlanklineIndent3',
-      --   'IndentBlanklineIndent4',
-      --   'IndentBlanklineIndent5',
-      --   'IndentBlanklineIndent6',
-      -- },
+      enabled = false,
     },
 
     animate = {
-      enabled = not vim.g.neovide,
-      style = 'up_down',
+      enabled = true,
+      style = 'out',
       duration = {
-        step = 50,
+        step = 40,
         total = 1000,
       },
     },
@@ -222,10 +229,19 @@ local config = {
     scope = {
       enabled = true,
       underline = false,
+      hl = 'Keyword',
     },
 
     chunk = {
       enabled = true,
+      char = {
+        corner_top = '╭',
+        corner_bottom = '╰',
+        horizontal = '─',
+        vertical = '│',
+        arrow = '─',
+      },
+      hl = 'Keyword',
     },
   },
   input = {
@@ -238,7 +254,9 @@ local config = {
   },
   notifier = {
     enabled = true,
-    style = 'fancy',
+    style = 'compact',
+    margin = { top = 0, right = 1, bottom = 0 },
+    padding = true,
     icons = {
       error = ' ',
       warn = ' ',
@@ -247,12 +265,20 @@ local config = {
       trace = ' ',
     },
   },
+  scroll = { enabled = false },
   quickfile = { enabled = true },
   statuscolumn = { enabled = false },
   terminal = {
     enabled = true,
     win = {
-      wo = { style = 'terminal', number = false, relativenumber = false },
+      keys = {
+        nav_h = { '<C-h>', term_nav('h'), desc = 'Go to Left Window', expr = true, mode = 't' },
+        nav_j = { '<C-j>', term_nav('j'), desc = 'Go to Lower Window', expr = true, mode = 't' },
+        nav_k = { '<C-k>', term_nav('k'), desc = 'Go to Upper Window', expr = true, mode = 't' },
+        nav_l = { '<C-l>', term_nav('l'), desc = 'Go to Right Window', expr = true, mode = 't' },
+        hide_slash = { '<C-/>', 'hide', desc = 'Hide Terminal', mode = 't' },
+        hide_underscore = { '<c-_>', 'hide', desc = 'which_key_ignore', mode = 't' },
+      },
     },
   },
   explorer = {
@@ -285,10 +311,17 @@ local config = {
   toggle = { enabled = true },
   terminal = {
     enabled = true,
-    win = { style = 'terminal' },
+    win = {
+      style = 'terminal',
+    },
+    auto_insert = true,
+    auto_close = false,
   },
   zen = { enabled = true },
   styles = {
+    zen = {
+      width = 200,
+    },
     notification = {
       wo = { wrap = true },
     },
@@ -309,4 +342,21 @@ return {
       return original_icon(name, cat, icon_opts)
     end
   end,
+
+  keys = {
+    {
+      '<leader>.',
+      function()
+        Snacks.scratch()
+      end,
+      desc = 'Toggle Scratch Buffer',
+    },
+    {
+      '<leader>S',
+      function()
+        Snacks.scratch.select()
+      end,
+      desc = 'Select Scratch Buffer',
+    },
+  },
 }

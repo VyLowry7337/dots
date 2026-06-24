@@ -18,7 +18,7 @@ return {
     green = "#50a14f",
     cyan = "#0184bc",
     blue = "#4078f2",
-    magenta = "#a626a4",
+    mauve = "#a626a4",
     white = "#383a42",
     black = "#fafafa",
 

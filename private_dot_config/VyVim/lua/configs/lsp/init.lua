@@ -61,6 +61,7 @@ M.defaults = function()
 
   -- Use new vim.lsp.config API for Neovim 0.11+
   vim.lsp.config('*', { capabilities = M.capabilities, on_init = M.on_init })
+  vim.lsp.document_color.enable(false)
 end
 
 return M

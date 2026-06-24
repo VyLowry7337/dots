@@ -627,6 +627,8 @@ M.open = function(buf, win, action)
       vim.wo.signcolumn = "yes"
       vim.o.number = true
       vim.o.wrap = true
+      vim.o.cursorline = true
+      vim.o.cursorlineopt = "number"
       pcall(api.nvim_del_augroup_by_name, "GnDashboardAu")
     end,
   })

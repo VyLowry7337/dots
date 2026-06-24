@@ -19,7 +19,7 @@
 ---@field green string
 ---@field cyan string
 ---@field blue string
----@field magenta string
+---@field mauve string
 ---@field white string foreground text
 ---@field black string dark foreground
 
@@ -28,7 +28,7 @@
 ---@field lime string bright green
 ---@field lemon string bright yellow
 ---@field sky string bright blue
----@field fuchsia string bright magenta
+---@field fuchsia string bright mauve
 ---@field aqua string bright cyan
 ---@field ivory string bright white
 ---@field charcoal string bright black (gray)
@@ -38,7 +38,7 @@
 ---@field emerald string pastel green
 ---@field sunshine string pastel yellow
 ---@field sapphire string pastel blue
----@field lavender string pastel magenta
+---@field lavender string pastel mauve
 ---@field mint string pastel cyan
 ---@field pearl string pastel white
 ---@field obsidian string pastel black (dim gray)
@@ -48,7 +48,7 @@
 ---@field forest string dark green
 ---@field mustard string dark yellow
 ---@field navy string dark blue
----@field plum string dark magenta
+---@field plum string dark mauve
 ---@field teal string dark cyan
 ---@field gray string dark white
 ---@field onyx string darkest black

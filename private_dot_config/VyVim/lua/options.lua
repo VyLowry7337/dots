@@ -30,6 +30,7 @@ o.pumblend = 0
 o.winblend = 0
 
 -- General Options
+o.sessionoptions = 'blank,buffers,curdir,globals,localoptions,options,resize,terminal,winpos,winsize'
 o.wrap = true
 o.cursorline = true
 o.cursorlineopt = 'number'
@@ -39,8 +40,8 @@ o.undofile = true
 o.ttyfast = true
 o.updatetime = 100
 o.smoothscroll = false
-o.scrolloff = 5
-o.sidescrolloff = 5
+o.scrolloff = 8
+o.sidescrolloff = 8
 o.laststatus = 3
 o.timeoutlen = 250
 o.redrawtime = 1500
@@ -84,15 +85,17 @@ o.splitkeep = 'screen'
 -- Neovide
 if vim.g.neovide then
   -- vim.o.guifont = "Ellograph CF:h22:300:#e-subpixelantialias:#h-none"
-  -- vim.g.neovide_opacity = 0.95
-  -- vim.g.neovide_normal_opacity = 0.95
+  vim.g.neovide_opacity = 0.90
+  vim.g.neovide_window_blurred = true
   vim.g.neovide_scroll_animation_length = 0.5
   vim.g.neovide_scroll_animation_far_lines = 99999
   vim.g.neovide_cursor_animate_command_line = true
   vim.g.neovide_show_border = false
   vim.g.neovide_hide_mouse_while_typing = true
   vim.g.neovide_no_idle = true
-  vim.opt.linespace = 5
+  vim.g.neovide_floating_corner_radius = 0.4
+  vim.g.neovide_pixel_geometry = 'RGBH'
+  vim.opt.linespace = 0
   vim.opt.guicursor = {
     'n-v-c:block',
     'i-ci-ve:ver25',
@@ -100,20 +103,19 @@ if vim.g.neovide then
     'o:hor50',
     'a:blinkwait500-blinkoff500-blinkon250-Cursor',
   }
-  vim.g.neovide_text_gamma = 0.8
-  vim.g.neovide_text_contrast = 0.1
   vim.g.neovide_position_animation_length = 0.3
   vim.g.neovide_cursor_animate_in_insert_mode = true
   vim.g.neovide_cursor_smooth_blink = true
-  vim.g.neovide_cursor_antialiasing = true
-  vim.g.neovide_cursor_trail_size = 4.0
-  vim.g.neovide_cursor_animation_length = 0.1
+  vim.g.neovide_cursor_antialiasing = false
+  vim.g.neovide_cursor_trail_size = 1.0
+  vim.g.neovide_cursor_animation_length = 0.150
   vim.g.neovide_refresh_rate = 144
   vim.g.neovide_padding_top = 0
   vim.g.neovide_padding_bottom = 0
   vim.g.neovide_padding_left = 20
   vim.g.neovide_padding_right = 0
   vim.g.neovide_pixel_geometry = 'RGBH'
+  vim.g.neovide_floating_shadow = false
 
   -- Function to change scale factor (Ctrl + - / =)
   local change_scale_factor = function(delta)

@@ -101,3 +101,34 @@ vim.schedule(function()
 end)
 
 vim.cmd('runtime macros/matchit.vim')
+
+vim.filetype.add({
+  extension = {
+    conf = 'tmux',
+    tmux = 'tmux',
+  },
+  filename = {
+    ['tmux.conf'] = 'tmux',
+  },
+})
+
+vim.filetype.add({
+  extension = {
+    jinja = 'jinja2',
+    jinja2 = 'jinja2',
+    j2 = 'jinja2',
+  },
+  pattern = {
+    ['.*%.html'] = {
+      function(path, bufnr)
+        local content = vim.api.nvim_buf_get_lines(bufnr, 0, 10, false)
+        for _, line in ipairs(content) do
+          if line:match('{%%') or line:match('{{') then
+            return 'htmldjango'
+          end
+        end
+      end,
+      { priority = 10 },
+    },
+  },
+})

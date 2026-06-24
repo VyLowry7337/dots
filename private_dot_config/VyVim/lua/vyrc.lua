@@ -2,7 +2,7 @@ local M = {}
 
 M.theme = {
   palette = 'catppuccinMocha',
-  transparent = true,
+  transparent = false,
 }
 
 M.style = 'compact'
@@ -33,9 +33,9 @@ M.bufline = {
 M.dashboard = {
   grid = {
     { 'header', 'header', 'header' },
-    { 'find', 'grep', 'recent' },
-    { 'config', 'lazy', 'mason' },
-    { 'git', 'health', 'quit' },
+    { 'find', 'recent', 'new' },
+    { 'lastSession', 'sessionSelect', 'config' },
+    { 'lazy', 'quit', 'mason' },
     { 'footer', 'footer', 'footer' },
   },
 
@@ -44,12 +44,12 @@ M.dashboard = {
   components = {
     header = {
       type = 'ascii',
-      content = require('ui.assets.ascii.gray-nvim').gray_nvim_future,
+      content = require('ui.assets.ascii.vyvim').bloody,
       hl = 'GnDashAscii',
     },
     find = {
       type = 'action',
-      icon = '',
+      icon = ' ',
       label = 'Find File',
       key = 'ff',
       desc = 'Search files',
@@ -58,16 +58,16 @@ M.dashboard = {
     },
     recent = {
       type = 'action',
-      icon = '',
+      icon = ' ',
       label = 'Recent',
-      key = 'fo',
+      key = 'fr',
       desc = 'Recent files',
       group = 'history',
       action = 'lua Snacks.picker.recent()',
     },
     grep = {
       type = 'action',
-      icon = '󰈭',
+      icon = '󰈭 ',
       label = 'Grep',
       key = 'fw',
       desc = 'Search text',
@@ -76,7 +76,7 @@ M.dashboard = {
     },
     marks = {
       type = 'action',
-      icon = '',
+      icon = ' ',
       label = 'Bookmarks',
       key = 'fm',
       desc = 'Saved marks',
@@ -85,16 +85,16 @@ M.dashboard = {
     },
     new = {
       type = 'action',
-      icon = '',
+      icon = ' ',
       label = 'New File',
-      key = 'n',
+      key = 'fn',
       desc = 'Empty buffer',
       group = 'project',
-      action = 'enew',
+      action = 'enew | startinsert',
     },
     config = {
       type = 'action',
-      icon = '',
+      icon = ' ',
       label = 'Config',
       key = 'c',
       desc = 'Neovim config',
@@ -103,7 +103,7 @@ M.dashboard = {
     },
     mason = {
       type = 'action',
-      icon = '',
+      icon = ' ',
       label = 'Mason',
       key = 'm',
       desc = 'LSP manager',
@@ -112,7 +112,7 @@ M.dashboard = {
     },
     quit = {
       type = 'action',
-      icon = '',
+      icon = ' ',
       label = 'Quit',
       key = 'q',
       desc = 'Exit neovim',
@@ -121,16 +121,16 @@ M.dashboard = {
     },
     lazy = {
       type = 'action',
-      icon = '󰒲',
+      icon = '󰒲 ',
       label = 'Lazy',
-      key = 'lz',
+      key = 'pm',
       desc = 'Plugin manager',
       group = 'tools',
       action = 'Lazy',
     },
     git = {
       type = 'action',
-      icon = '',
+      icon = ' ',
       label = 'Git Status',
       key = 'gs',
       desc = 'Changed files',
@@ -139,7 +139,7 @@ M.dashboard = {
     },
     keys = {
       type = 'action',
-      icon = '',
+      icon = ' ',
       label = 'Keymaps',
       key = 'fk',
       desc = 'Key bindings',
@@ -148,12 +148,30 @@ M.dashboard = {
     },
     health = {
       type = 'action',
-      icon = '',
+      icon = ' ',
       label = 'Health',
       key = 'ch',
       desc = 'Check health',
       group = 'tools',
       action = 'checkhealth',
+    },
+    sessionSelect = {
+      type = 'action',
+      icon = ' ',
+      label = 'Sessions',
+      key = 'ss',
+      desc = 'Session select',
+      group = 'history',
+      action = "lua require('persistence').select()",
+    },
+    lastSession = {
+      type = 'action',
+      icon = '󱈅 ',
+      label = 'Resume Session',
+      key = 'sr',
+      desc = 'Resume last session',
+      group = 'project',
+      action = "lua require('persistence').load()",
     },
     footer = {
       type = 'text',

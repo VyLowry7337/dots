@@ -10,7 +10,9 @@ return {
   border = '#313244', -- Mocha Surface 0
   float_border = '#45475a', -- Mocha Surface 1
   comment = '#6c7086', -- Mocha Overlay 0
-  stl_bg = '#313244', -- Mocha Surface 0
+  stl_bg = '#181825', -- Mocha Surface 0
+  overlay1 = '#7f849c',
+  overlay2 = '#9399b2',
   black = '#11111b', -- Mocha Crust
   onyx = '#181825', -- Mocha Mantle (was Crust, give it Mantle)
   obsidian = '#45475a', -- Mocha Surface 1
@@ -23,7 +25,7 @@ return {
   peach = '#fab387', -- Mocha Peach
 
   -- Oranges
-  orange = '#fab387', -- Mocha Peach
+  orange = '#F5A97F', -- Mocha Peach
   tangerine = '#ef9f76', -- Frappé Peach
 
   -- Yellows
@@ -49,12 +51,12 @@ return {
   sapphire = '#74c7ec', -- Mocha Sapphire
   navy = '#89b4fa', -- Mocha Blue
   blue = '#8aadf4', -- Macchiato Blue
-
   -- Purples / Mauves / Lavenders
-  magenta = '#cba6f7', -- Mocha Mauve
+  mauve = '#cba6f7', -- Mocha Mauve
   fuchsia = '#c6a0f6', -- Frappé Mauve
   plum = '#ca9ee6', -- Frappé Mauve (slightly different)
   lavender = '#b4befe', -- Mocha Lavender
+  property_lavender = '#c1b4fe',
   grape = '#b7bdf8', -- Macchiato Lavender
 
   -- Whites / Texts / Pearls / Ivorys
@@ -62,6 +64,10 @@ return {
   ivory = '#cad3f5', -- Macchiato Text
   pearl = '#bac2de', -- Mocha Subtext 1
   gray = '#9399b2', -- Mocha Overlay 2
+
+  rosewater = '#f5e0dc',
+  flamingo = '#f2cdcd',
+  pink = '#f5c2e7',
 
   none = 'none',
 }
